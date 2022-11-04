@@ -1,0 +1,67 @@
+{
+    "name": "rulilg/laravel-stable-diffusion",
+    "description": "Stable Diffusion integration with Replicate and Laravel",
+    "keywords": [
+        "RuliLG",
+        "laravel",
+        "stable diffusion",
+        "laravel-stable-diffusion"
+    ],
+    "homepage": "https://github.com/rulilg/laravel-stable-diffusion",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raúl López",
+            "email": "raul@calimasolutions.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.13.0",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "RuliLG\\StableDiffusion\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RuliLG\\StableDiffusion\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RuliLG\\StableDiffusion\\StableDiffusionServiceProvider"
+            ],
+            "aliases": {
+                "StableDiffusion": "RuliLG\\StableDiffusion\\Facades\\StableDiffusion"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
